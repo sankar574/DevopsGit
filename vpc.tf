@@ -14,3 +14,11 @@ resource "aws_internet_gateway" "default" {
         Name = "DevopsGIT-IGW"
     }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "stehankarterraformbucket"
+    key    = "myterraform.tfstate"
+    region = "us-east-1"
+  }
+}
